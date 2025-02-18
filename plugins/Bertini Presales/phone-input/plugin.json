@@ -1,0 +1,14 @@
+{
+  "id": "acme-phone-input",
+  "version": "1.0.0",
+  "title": "ACME Phone Input",
+  "description": "Composant de saisie téléphonique avec validation",
+  "author": "ACME",
+  "vendor": "ACME",
+  "bundles": [
+    {
+      "id": "acme-phone-input",
+      "entrypoint": "index.js"
+    }
+  ]
+}
