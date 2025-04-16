@@ -1,0 +1,667 @@
+/* Thème Material Design Moderne pour Nintex */
+
+/* Variables de couleurs */
+:root {
+    --primary: #5C6BC0;       /* Indigo 400 */
+    --primary-light: #8E99F3; /* Indigo 200 */
+    --primary-dark: #26418f;  /* Indigo 700 */
+    --secondary: #26C6DA;     /* Cyan 400 */
+    --error: #EF5350;         /* Red 400 */
+    --success: #66BB6A;       /* Green 400 */
+    --background: #FAFAFA;    /* Grey 50 */
+    --surface: #FFFFFF;       /* White */
+    --on-primary: #FFFFFF;    /* White */
+    --on-secondary: #000000;  /* Black */
+    --on-background: #212121; /* Grey 900 */
+    --on-surface: #212121;    /* Grey 900 */
+    --on-error: #FFFFFF;      /* White */
+    --divider: #E0E0E0;       /* Grey 300 */
+}
+
+/* Fond de page avec légère texture */
+[dir] .nx-theme-styles .nx-theme-page {
+    background-color: var(--background);
+    background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Conteneur du formulaire - effet carte Material */
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: var(--surface);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 2px 10px rgba(0, 0, 0, 0.07);
+    padding: 32px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet d'ondulation sur le formulaire au survol */
+[dir] .nx-theme-styles .nx-theme-form:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Titres du formulaire */
+[dir] .nx-theme-styles .nx-theme-form h1,
+[dir] .nx-theme-styles .nx-theme-form h2,
+[dir] .nx-theme-styles .nx-theme-form h3,
+[dir] .nx-theme-styles .nx-theme-page h1,
+[dir] .nx-theme-styles .nx-theme-page h2,
+[dir] .nx-theme-styles .nx-theme-page h3 {
+    color: var(--on-surface);
+    font-weight: 500;
+    margin-bottom: 24px;
+    position: relative;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+/* Titre de page spécifique */
+[dir] .nx-theme-styles .nx-page-title,
+[dir] .nx-theme-styles .nx-form-title {
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 24px;
+    font-family: 'Google Sans', 'Roboto', sans-serif;
+}
+
+/* Étiquettes des champs - style Material */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: var(--on-surface);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+/* Animation pour les labels quand le champ est focus */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1:focus + .nx-theme-label-1 {
+    color: var(--primary);
+}
+
+/* Champs de saisie - style Material */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1 {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--divider);
+    border-radius: 0;
+    color: var(--on-surface);
+    font-size: 1rem;
+    padding: 12px 0 8px 0;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 24px;
+}
+
+/* Animation de focus sur les champs */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+    outline: none;
+}
+
+/* Ligne d'animation sur les champs */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--primary);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1:focus::after {
+    width: 100%;
+}
+
+/* Groupe d'input avec effet flottant pour labels */
+[dir] .nx-theme-styles .nx-theme-form .nx-input-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+/* Effet bouton FAB (Floating Action Button) */
+[dir] .nx-theme-styles .nx-theme-button-1 {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet ripple sur le bouton principal */
+[dir] .nx-theme-styles .nx-theme-button-1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+[dir] .nx-theme-styles .nx-theme-button-1:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* Animation survol du bouton */
+[dir] .nx-theme-styles .nx-theme-button-1:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Animation clic du bouton */
+[dir] .nx-theme-styles .nx-theme-button-1:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* Bouton secondaire - outlined style */
+[dir] .nx-theme-styles .nx-theme-button-2 {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 11px 24px;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation survol du bouton secondaire */
+[dir] .nx-theme-styles .nx-theme-button-2:hover {
+    background-color: rgba(92, 107, 192, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons disposés en groupe horizontal */
+[dir] .nx-theme-styles .nx-button-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+/* Multi-page container */
+ntx-multi-page .nx-multi-page {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* Cartes Material individuelles pour les sections */
+[dir] .nx-theme-styles .nx-card {
+    background-color: var(--surface);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir] .nx-theme-styles .nx-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres des cartes */
+[dir] .nx-theme-styles .nx-card-title {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--divider);
+    padding-bottom: 12px;
+}
+
+/* Grille responsive pour les inputs */
+[dir] .nx-theme-styles .nx-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+/* Menu déroulant style Material */
+[dir] .nx-theme-styles .nx-theme-form select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--divider);
+    border-radius: 0;
+    color: var(--on-surface);
+    font-size: 1rem;
+    padding: 12px 0 8px 0;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23757575' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 30px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form select:focus {
+    border-color: var(--primary);
+    box-shadow: none;
+    outline: none;
+}
+
+/* Checkbox style Material */
+[dir] .nx-theme-styles .nx-theme-form input[type="checkbox"],
+[dir] .nx-theme-styles .nx-theme-form input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 2px solid var(--divider);
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form input[type="radio"] {
+    border-radius: 50%;
+}
+
+[dir] .nx-theme-styles .nx-theme-form input[type="checkbox"]:checked,
+[dir] .nx-theme-styles .nx-theme-form input[type="radio"]:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+[dir] .nx-theme-styles .nx-theme-form input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    top: 1px;
+    left: 5px;
+    transform: rotate(45deg);
+}
+
+[dir] .nx-theme-styles .nx-theme-form input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    top: 3px;
+    left: 3px;
+}
+
+/* Messages d'erreur Material */
+[dir] .nx-theme-styles .nx-theme-form .nx-error-message {
+    color: var(--error);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-error-message::before {
+    content: "⚠";
+    margin-right: 6px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Messages de succès Material */
+[dir] .nx-theme-styles .nx-theme-form .nx-success-message {
+    color: var(--success);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-success-message::before {
+    content: "✓";
+    margin-right: 6px;
+}
+
+/* Séparateurs */
+[dir] .nx-theme-styles .nx-theme-form hr {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 32px 0;
+}
+
+/* Animation de chargement de la page */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[dir] .nx-theme-styles .nx-theme-form {
+    animation: cardEntrance 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+/* Effets d'entrée pour les champs */
+@keyframes fieldEntrance {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1 {
+    animation: fieldEntrance 0.5s cubic-bezier(0.4, 0, 0.2, 1) calc(var(--item-index, 0) * 0.05s + 0.2s) both;
+}
+
+/* Stepper Material Design */
+[dir] .nx-theme-styles .nx-stepper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+[dir] .nx-theme-styles .nx-stepper::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: var(--divider);
+    top: 16px;
+    left: 20px;
+    right: 20px;
+    z-index: 0;
+}
+
+[dir] .nx-theme-styles .nx-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+[dir] .nx-theme-styles .nx-step-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    border: 2px solid var(--divider);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir] .nx-theme-styles .nx-step.active .nx-step-icon {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+    box-shadow: 0 2px 8px rgba(92, 107, 192, 0.5);
+}
+
+[dir] .nx-theme-styles .nx-step.completed .nx-step-icon {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+
+[dir] .nx-theme-styles .nx-step-label {
+    font-size: 0.8rem;
+    color: var(--on-surface);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir] .nx-theme-styles .nx-step.active .nx-step-label,
+[dir] .nx-theme-styles .nx-step.completed .nx-step-label {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Progress bar animée */
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+[dir] .nx-theme-styles .nx-progress-bar {
+    height: 4px;
+    background-color: var(--divider);
+    border-radius: 2px;
+    margin: 32px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+[dir] .nx-theme-styles .nx-progress-bar::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 2px;
+    animation: progressAnimation 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    [dir] .nx-theme-styles .nx-theme-form {
+        padding: 24px;
+        width: 95%;
+    }
+    
+    [dir] .nx-theme-styles .nx-theme-page {
+        padding: 20px 10px;
+    }
+    
+    [dir] .nx-theme-styles .nx-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    [dir] .nx-theme-styles .nx-page-title,
+    [dir] .nx-theme-styles .nx-form-title {
+        font-size: 1.6rem;
+    }
+    
+    [dir] .nx-theme-styles .nx-step-label {
+        font-size: 0.7rem;
+    }
+}
+
+/* Fab button flottant pour actions */
+[dir] .nx-theme-styles .nx-fab {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+}
+
+[dir] .nx-theme-styles .nx-fab:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Snackbar pour notifications */
+@keyframes snackbarEntrance {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+[dir] .nx-theme-styles .nx-snackbar {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #323232;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 4px;
+    min-width: 288px;
+    max-width: 568px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: snackbarEntrance 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    z-index: 1000;
+}
+
+[dir] .nx-theme-styles .nx-snackbar-action {
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: 500;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+/* Tooltip Material Design */
+[dir] .nx-theme-styles .nx-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+[dir] .nx-theme-styles .nx-tooltip .nx-tooltip-text {
+    visibility: hidden;
+    background-color: #616161;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+[dir] .nx-theme-styles .nx-tooltip:hover .nx-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Animation badge notification */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 6px rgba(255, 82, 82, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    }
+}
+
+[dir] .nx-theme-styles .nx-badge {
+    position: relative;
+    display: inline-block;
+}
+
+[dir] .nx-theme-styles .nx-badge::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: var(--error);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0 4px;
+    box-sizing: border-box;
+    animation: pulse 1.5s infinite;
+}
