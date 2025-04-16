@@ -1,0 +1,458 @@
+/* Thème Moderne avec Accent RGB(43, 57, 130) - Animations améliorées */
+
+/* Conteneur du formulaire - Animation d'apparition */
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(43, 57, 130);
+    
+    /* Animation d'entrée du formulaire */
+    animation: formAppear 0.6s ease-out forwards;
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fond de page avec dégradé moderne autour de rgb(43, 57, 130) */
+[dir] .nx-theme-styles .nx-theme-page {
+    background: linear-gradient(135deg, rgb(73, 87, 160), rgb(43, 57, 130), rgb(23, 37, 110));
+    background-size: 300% 300%;
+    animation: gradientShift 15s ease infinite;
+    border-radius: 16px !important;
+    padding: 20px;
+}
+
+/* Animation du dégradé */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animation des étiquettes des champs */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: rgb(43, 57, 130);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    transform-origin: left;
+    animation: slideInFromLeft 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation des champs de saisie - focus et hover */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1 {
+    background-color: rgba(249, 250, 251, 0.9);
+    color: rgb(43, 57, 130);
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    padding: 14px 16px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1:focus {
+    border-color: rgb(43, 57, 130);
+    box-shadow: 0 0 0 3px rgba(43, 57, 130, 0.2);
+    outline: none;
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1:hover:not(:focus) {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Animation du bouton principal */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background: linear-gradient(to right, rgb(43, 57, 130), rgb(63, 77, 150));
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 12px;
+    padding: 16px !important;
+    line-height: 1.2 !important;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 12px rgba(43, 57, 130, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(43, 57, 130, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(43, 57, 130, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(43, 57, 130, 0.3);
+    }
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover {
+    background: linear-gradient(to right, rgb(33, 47, 120), rgb(53, 67, 140));
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 6px 16px rgba(43, 57, 130, 0.4);
+    cursor: pointer;
+    animation: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover:before {
+    left: 100%;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 3px 10px rgba(43, 57, 130, 0.35);
+    transition: all 0.1s;
+}
+
+/* Animation du bouton secondaire */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(43, 57, 130);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid rgb(43, 57, 130);
+    border-radius: 12px;
+    padding: 16px !important;
+    line-height: 1.2 !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(43, 57, 130, 0.2);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:hover {
+    background-color: rgba(43, 57, 130, 0.1);
+    border-color: rgb(33, 47, 120);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:active:after {
+    animation: ripple 0.8s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(30, 30);
+        opacity: 0;
+    }
+}
+
+/* Animation apparition séquentielle des éléments du formulaire */
+[dir] .nx-theme-styles .nx-theme-form > * {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(1) { animation-delay: 0.1s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(2) { animation-delay: 0.2s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(3) { animation-delay: 0.3s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(4) { animation-delay: 0.4s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(5) { animation-delay: 0.5s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(6) { animation-delay: 0.6s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(7) { animation-delay: 0.7s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(8) { animation-delay: 0.8s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(9) { animation-delay: 0.9s; }
+[dir] .nx-theme-styles .nx-theme-form > *:nth-child(10) { animation-delay: 1s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour multichoice */
+[dir] .nx-theme-styles .nx-theme-form ntx-choice {
+    display: block;
+    background-color: rgba(249, 250, 251, 0.9);
+    color: rgb(43, 57, 130);
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    padding: 14px 16px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    animation: slideInOptions 0.4s ease-out backwards;
+}
+
+@keyframes slideInOptions {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation séquentielle pour les options */
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(1) { animation-delay: 0.1s; }
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(2) { animation-delay: 0.15s; }
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(3) { animation-delay: 0.2s; }
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(4) { animation-delay: 0.25s; }
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(5) { animation-delay: 0.3s; }
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(6) { animation-delay: 0.35s; }
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(7) { animation-delay: 0.4s; }
+[dir] .nx-theme-styles .nx-theme-form ntx-multichoice ntx-choice:nth-child(8) { animation-delay: 0.45s; }
+
+/* Animation au survol et sélection */
+[dir] .nx-theme-styles .nx-theme-form ntx-choice:hover {
+    border-color: rgb(43, 57, 130);
+    box-shadow: 0 0 0 2px rgba(43, 57, 130, 0.1);
+    background-color: rgba(249, 250, 251, 1);
+    transform: translateX(3px);
+}
+
+[dir] .nx-theme-styles .nx-theme-form ntx-choice[selected],
+[dir] .nx-theme-styles .nx-theme-form ntx-choice.selected {
+    border-color: rgb(43, 57, 130);
+    box-shadow: 0 0 0 3px rgba(43, 57, 130, 0.2);
+    background-color: #ffffff;
+    font-weight: 500;
+    transform: translateX(5px) scale(1.01);
+    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/* Animation pour le multi-page container */
+ntx-multi-page .nx-multi-page {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    animation: slideUp 0.7s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour les transitions de page */
+ntx-multi-page .nx-multi-page-content-enter {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+ntx-multi-page .nx-multi-page-content-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease-out;
+}
+
+ntx-multi-page .nx-multi-page-content-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+ntx-multi-page .nx-multi-page-content-exit-active {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease-in;
+}
+
+/* Animation pour les erreurs de validation */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-error {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    color: #e53e3e;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-3px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(3px, 0, 0);
+    }
+}
+
+/* Animation de succès pour les champs validés */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1.valid {
+    border-color: #48bb78;
+    animation: successPulse 0.5s;
+}
+
+@keyframes successPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(72, 187, 120, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0);
+    }
+}
+
+/* Animation pour le focus des éléments */
+[dir] .nx-theme-styles .nx-theme-form select:focus,
+[dir] .nx-theme-styles .nx-theme-form textarea:focus {
+    outline: none;
+    border-color: rgb(43, 57, 130);
+    box-shadow: 0 0 0 3px rgba(43, 57, 130, 0.2);
+    animation: focusPulse 0.5s;
+}
+
+@keyframes focusPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(43, 57, 130, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(43, 57, 130, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(43, 57, 130, 0);
+    }
+}
+
+/* Optimisations pour les appareils mobiles */
+@media (max-width: 768px) {
+    [dir] .nx-theme-styles .nx-theme-form {
+        padding: 20px;
+    }
+    
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1,
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+        font-size: 1rem;
+        padding: 14px !important;
+    }
+    
+    /* Ajustement des animations pour éviter les problèmes de performance */
+    @keyframes buttonPulse {
+        0%, 100% {
+            box-shadow: 0 4px 12px rgba(43, 57, 130, 0.3);
+        }
+    }
+}
+
+/* Animation pour indiquer le chargement/soumission */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1.loading,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2.loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1.loading:after,
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2.loading:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2.loading:after {
+    border: 2px solid rgba(43, 57, 130, 0.2);
+    border-top-color: rgb(43, 57, 130);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
