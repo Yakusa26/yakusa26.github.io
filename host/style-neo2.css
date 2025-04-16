@@ -100,17 +100,17 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Étiquettes des champs - style holographique amélioré pour lisibilité */
+/* Étiquettes des champs - style net et clair */
 [dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
-    color: rgba(220, 230, 255, 0.95);
+    color: #FFFFFF;
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 10px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     position: relative;
     display: block;
-    text-shadow: 0 0 3px rgba(43, 57, 130, 0.3);
+    text-shadow: none;
 }
 
 /* Effet de soulignement pour les étiquettes */
@@ -369,21 +369,29 @@ ntx-multi-page .nx-multi-page {
     margin-top: 5px;
 }
 
-/* Titres et sous-titres - style holographique */
+/* Titres et sous-titres - style net et lisible */
 [dir] .nx-theme-styles .nx-theme-form h1,
 [dir] .nx-theme-styles .nx-theme-form h2,
-[dir] .nx-theme-styles .nx-theme-form h3 {
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 600;
+[dir] .nx-theme-styles .nx-theme-form h3,
+[dir] .nx-theme-styles .nx-theme-page h1,
+[dir] .nx-theme-styles .nx-theme-page h2,
+[dir] .nx-theme-styles .nx-theme-page h3 {
+    color: #FFFFFF;
+    font-weight: 700;
     margin-bottom: 25px;
     position: relative;
     display: inline-block;
-    text-shadow: 0 0 8px rgba(100, 120, 230, 0.5);
+    text-shadow: none; /* Suppression de l'ombre floue */
+    letter-spacing: 0.5px;
+    font-size: 1.8rem;
 }
 
 [dir] .nx-theme-styles .nx-theme-form h1:after,
 [dir] .nx-theme-styles .nx-theme-form h2:after,
-[dir] .nx-theme-styles .nx-theme-form h3:after {
+[dir] .nx-theme-styles .nx-theme-form h3:after,
+[dir] .nx-theme-styles .nx-theme-page h1:after,
+[dir] .nx-theme-styles .nx-theme-page h2:after,
+[dir] .nx-theme-styles .nx-theme-page h3:after {
     content: '';
     position: absolute;
     width: 40%;
@@ -391,6 +399,32 @@ ntx-multi-page .nx-multi-page {
     background: linear-gradient(90deg, rgb(100, 120, 230), rgba(100, 120, 230, 0));
     left: 0;
     bottom: -8px;
+}
+
+/* Styles pour les titres de page spécifiques - extra net */
+[dir] .nx-theme-styles .nx-page-title,
+[dir] .nx-theme-styles .nx-form-title {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: none;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenu texte avec meilleure lisibilité - sans flou */
+[dir] .nx-theme-styles .nx-theme-form p,
+[dir] .nx-theme-styles .nx-theme-form span,
+[dir] .nx-theme-styles .nx-theme-form div,
+[dir] .nx-theme-styles .nx-theme-page p,
+[dir] .nx-theme-styles .nx-theme-page span,
+[dir] .nx-theme-styles .nx-theme-page div {
+    color: #FFFFFF;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    text-shadow: none;
 }
 
 /* Responsive adjustments */
