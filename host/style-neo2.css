@@ -1,0 +1,572 @@
+/* Thème Néo-Futuriste pour Nintex avec RGB(43, 57, 130) */
+
+/* Conteneur principal - effet cyber-espace */
+[dir] .nx-theme-styles .nx-theme-page {
+    background: linear-gradient(135deg, rgb(23, 37, 110), rgb(43, 57, 130), rgb(25, 40, 100));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    border-radius: 0 !important; /* Effet plein écran */
+    position: relative;
+    padding: 30px;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Effet de grille cyberpunk en arrière-plan */
+[dir] .nx-theme-styles .nx-theme-page:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(43, 57, 130, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43, 57, 130, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: -1px -1px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Cercle lumineux en arrière-plan */
+[dir] .nx-theme-styles .nx-theme-page:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vh;
+    height: 80vh;
+    background: radial-gradient(circle, rgba(100, 120, 230, 0.2) 0%, rgba(43, 57, 130, 0.1) 40%, rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+    animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
+    100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Conteneur du formulaire - effet holographique avec plus de largeur */
+[dir] .nx-theme-styles .nx-theme-form {
+    background: rgba(20, 30, 60, 0.85);
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', 'Roboto', sans-serif !important;
+    box-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(43, 57, 130, 0.2),
+        0 0 20px rgba(43, 57, 130, 0.3);
+    padding: 35px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 120, 230, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    max-width: 800px; /* Augmentation de la largeur */
+    width: 90%; /* S'assure que le formulaire est large même sur petits écrans */
+    margin: 0 auto;
+}
+
+/* Effet de bordure lumineuse */
+[dir] .nx-theme-styles .nx-theme-form:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(43, 57, 130, 0) 0%,
+        rgba(100, 120, 230, 0.8) 50%,
+        rgba(43, 57, 130, 0) 100%);
+    border-radius: 13px;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(5px);
+    animation: borderGlow 6s infinite linear;
+}
+
+@keyframes borderGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Étiquettes des champs - style holographique amélioré pour lisibilité */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: rgba(220, 230, 255, 0.95);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    text-shadow: 0 0 3px rgba(43, 57, 130, 0.3);
+}
+
+/* Effet de soulignement pour les étiquettes */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background-color: rgb(100, 120, 230);
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1:hover:after {
+    width: 40px;
+}
+
+/* Champs de saisie - design futuriste */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1 {
+    background-color: rgba(10, 15, 35, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: 1px solid rgba(100, 120, 230, 0.3);
+    padding: 14px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Effet de scintillement au focus */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1:focus {
+    border-color: rgb(100, 120, 230);
+    box-shadow: 
+        0 0 0 3px rgba(43, 57, 130, 0.2),
+        0 0 15px rgba(100, 120, 230, 0.3);
+    outline: none;
+    background-color: rgba(15, 25, 50, 0.8);
+    animation: inputGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes inputGlow {
+    0% { box-shadow: 0 0 0 3px rgba(43, 57, 130, 0.1), 0 0 5px rgba(100, 120, 230, 0.2); }
+    100% { box-shadow: 0 0 0 3px rgba(43, 57, 130, 0.2), 0 0 10px rgba(100, 120, 230, 0.4); }
+}
+
+/* Bouton principal - style néon */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background: rgb(43, 57, 130);
+    color: #ffffff;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 16px !important;
+    line-height: 1.2 !important;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(43, 57, 130, 0.2),
+        0 0 0 0 rgba(100, 120, 230, 0.5);
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Effet de pulsation au survol */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover {
+    background: rgb(53, 67, 140);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(100, 120, 230, 0.3),
+        0 0 25px rgba(100, 120, 230, 0.5);
+    cursor: pointer;
+}
+
+/* Effet de vagues au survol */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: skewX(-30deg);
+    transition: all 0.75s ease;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover:before {
+    left: 100%;
+}
+
+/* Bouton secondaire - style contour lumineux */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+    background-color: transparent;
+    color: rgba(180, 200, 255, 0.9);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    width: 100%;
+    border: 1px solid rgba(100, 120, 230, 0.5);
+    border-radius: 8px;
+    padding: 16px !important;
+    line-height: 1.2 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:hover {
+    background-color: rgba(43, 57, 130, 0.15);
+    border-color: rgba(100, 120, 230, 0.7);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.15),
+        0 0 12px rgba(100, 120, 230, 0.3);
+    cursor: pointer;
+}
+
+/* Multi-page container */
+ntx-multi-page .nx-multi-page {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(100, 120, 230, 0.2);
+}
+
+/* Custom scrollbar - style néon */
+[dir] .nx-theme-styles .nx-theme-form::-webkit-scrollbar {
+    width: 5px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+[dir] .nx-theme-styles .nx-theme-form::-webkit-scrollbar-thumb {
+    background: rgb(100, 120, 230);
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(100, 120, 230, 0.5);
+}
+
+/* Option groups - effet vitrine */
+[dir] .nx-theme-styles .nx-theme-form fieldset {
+    border: 1px solid rgba(100, 120, 230, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: rgba(15, 20, 40, 0.4);
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+[dir] .nx-theme-styles .nx-theme-form legend {
+    color: rgba(180, 200, 255, 0.9);
+    font-weight: 600;
+    padding: 0 10px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Effet de contour lumineux pour les fieldsets au hover */
+[dir] .nx-theme-styles .nx-theme-form fieldset:hover {
+    border-color: rgba(100, 120, 230, 0.5);
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.15),
+        0 0 8px rgba(100, 120, 230, 0.2);
+}
+
+/* Group dividers - style ligne laser */
+[dir] .nx-theme-styles .nx-theme-form hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, 
+        rgba(43, 57, 130, 0),
+        rgba(100, 120, 230, 0.7),
+        rgba(43, 57, 130, 0));
+    margin: 28px 0;
+    position: relative;
+}
+
+/* Effet pulse pour les séparateurs */
+[dir] .nx-theme-styles .nx-theme-form hr:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to right, 
+        rgba(43, 57, 130, 0),
+        rgba(255, 255, 255, 0.7),
+        rgba(43, 57, 130, 0));
+    opacity: 0;
+    animation: pulseLine 3s infinite;
+}
+
+@keyframes pulseLine {
+    0% { opacity: 0; left: 0; right: 0; }
+    50% { opacity: 0.5; left: 25%; right: 25%; }
+    100% { opacity: 0; left: 0; right: 0; }
+}
+
+/* Checkbox and radio styling - style néon */
+[dir] .nx-theme-styles .nx-theme-form input[type="checkbox"],
+[dir] .nx-theme-styles .nx-theme-form input[type="radio"] {
+    accent-color: rgb(100, 120, 230);
+}
+
+/* Messages d'erreur - style alerte futuriste */
+[dir] .nx-theme-styles .nx-theme-form .nx-error-message {
+    background-color: rgba(230, 40, 40, 0.1);
+    border-left: 3px solid rgb(230, 40, 40);
+    color: rgb(255, 100, 100);
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    position: relative;
+    animation: errorPulse 2s infinite;
+}
+
+@keyframes errorPulse {
+    0% { box-shadow: 0 0 0 0 rgba(230, 40, 40, 0.4); }
+    70% { box-shadow: 0 0 0 5px rgba(230, 40, 40, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(230, 40, 40, 0); }
+}
+
+/* Messages de succès - style confirmation futuriste */
+[dir] .nx-theme-styles .nx-theme-form .nx-success-message {
+    background-color: rgba(0, 230, 100, 0.1);
+    border-left: 3px solid rgb(0, 230, 100);
+    color: rgb(100, 255, 150);
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Titres et sous-titres - style holographique */
+[dir] .nx-theme-styles .nx-theme-form h1,
+[dir] .nx-theme-styles .nx-theme-form h2,
+[dir] .nx-theme-styles .nx-theme-form h3 {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 8px rgba(100, 120, 230, 0.5);
+}
+
+[dir] .nx-theme-styles .nx-theme-form h1:after,
+[dir] .nx-theme-styles .nx-theme-form h2:after,
+[dir] .nx-theme-styles .nx-theme-form h3:after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(100, 120, 230), rgba(100, 120, 230, 0));
+    left: 0;
+    bottom: -8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    [dir] .nx-theme-styles .nx-theme-form {
+        padding: 25px;
+        margin: 15px;
+    }
+    
+    [dir] .nx-theme-styles .nx-theme-page {
+        padding: 15px;
+    }
+    
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1,
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+        font-size: 0.9rem;
+        padding: 14px !important;
+    }
+    
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+        font-size: 0.8rem;
+    }
+}
+
+/* Placeholder personnalisé pour les entrées */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1::placeholder {
+    color: rgba(150, 170, 220, 0.5);
+    opacity: 1;
+}
+
+/* Animation de transition entre les pages */
+[dir] .nx-theme-styles .nx-multi-page-transition {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+[dir] .nx-theme-styles .nx-multi-page-transition-enter {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+[dir] .nx-theme-styles .nx-multi-page-transition-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[dir] .nx-theme-styles .nx-multi-page-transition-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[dir] .nx-theme-styles .nx-multi-page-transition-exit-active {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+/* Élément de progression - style futuriste */
+[dir] .nx-theme-styles .nx-progress-indicator {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+[dir] .nx-theme-styles .nx-progress-step {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: rgba(43, 57, 130, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+[dir] .nx-theme-styles .nx-progress-step.active {
+    background-color: rgb(100, 120, 230);
+    box-shadow: 0 0 10px rgba(100, 120, 230, 0.7);
+}
+
+[dir] .nx-theme-styles .nx-progress-step.completed {
+    background-color: rgba(100, 120, 230, 0.7);
+}
+
+/* Effet de particules en arrière-plan - Solution CSS pure */
+@keyframes particle1 {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    25% { opacity: 0.5; }
+    75% { opacity: 0.5; }
+    100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes particle2 {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    25% { opacity: 0.5; }
+    75% { opacity: 0.5; }
+    100% { transform: translateY(-100vh) translateX(-30px); opacity: 0; }
+}
+
+@keyframes particle3 {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    25% { opacity: 0.5; }
+    75% { opacity: 0.5; }
+    100% { transform: translateY(-100vh) translateX(10px); opacity: 0; }
+}
+
+/* Particules pré-positionnées */
+[dir] .nx-theme-styles .nx-theme-page:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(43, 57, 130, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43, 57, 130, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: -1px -1px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Particules statiques avec animation */
+[dir] .nx-theme-styles .nx-theme-page:after {
+    content: '';
+    box-shadow: 
+        /* Première ligne de particules */
+        0 0 0 2px rgba(100, 120, 230, 0.2) inset,
+        calc(100vw * 0.1) calc(100vh - 20px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.2) calc(100vh - 10px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.3) calc(100vh - 30px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.4) calc(100vh - 15px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.5) calc(100vh - 25px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.6) calc(100vh - 18px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.7) calc(100vh - 22px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.8) calc(100vh - 12px) 0 0 rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.9) calc(100vh - 28px) 0 0 rgba(100, 120, 230, 0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* Pseudo-elements pour les particules animées */
+[dir] .nx-theme-styles .nx-theme-page:before {
+    animation: particle1 15s linear infinite;
+}
+
+[dir] .nx-theme-styles .nx-theme-page:after {
+    animation: particle2 20s linear infinite;
+}
+
+/* Creation de particules supplémentaires avec pseudo-elements */
+[dir] .nx-theme-styles .nx-theme-form:after {
+    content: '';
+    box-shadow: 
+        calc(100vw * 0.15) calc(100vh - 25px) 0 2px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.25) calc(100vh - 15px) 0 1px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.35) calc(100vh - 35px) 0 3px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.45) calc(100vh - 20px) 0 1px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.55) calc(100vh - 30px) 0 2px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.65) calc(100vh - 23px) 0 1px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.75) calc(100vh - 27px) 0 2px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.85) calc(100vh - 17px) 0 1px rgba(100, 120, 230, 0.15),
+        calc(100vw * 0.95) calc(100vh - 33px) 0 3px rgba(100, 120, 230, 0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 1;
+    animation: particle3 25s linear infinite;
+}
