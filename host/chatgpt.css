@@ -1,0 +1,202 @@
+/* === Variables personnalisées === */
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #7C3AED;
+    --accent-color: #2563EB;
+    --danger-color: #EF4444;
+    --light-bg: rgba(255, 255, 255, 0.95);
+    --input-bg: rgba(249, 250, 251, 0.9);
+    --text-color: #1F2937;
+    --label-color: #3B3F5C;
+    --placeholder-color: #9CA3AF;
+    --border-color: #E5E7EB;
+    --radius: 16px;
+    --blur: blur(10px);
+    --font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+/* === Page avec fond dégradé animé === */
+[dir] .nx-theme-styles .nx-theme-page {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background-size: 300% 300%;
+    animation: gradientShift 15s ease infinite;
+    border-radius: var(--radius) !important;
+    padding: 20px;
+}
+
+/* === Animation du dégradé === */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === Conteneur du formulaire === */
+[dir] .nx-theme-styles .nx-theme-form {
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    font-family: var(--font-family) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    backdrop-filter: var(--blur);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* === Animation d'apparition === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Étiquettes === */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-label-1 {
+    color: var(--label-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+/* === Champs de saisie === */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1 {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 14px 16px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1::placeholder {
+    color: var(--placeholder-color);
+    font-style: italic;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* === État d'erreur === */
+[dir] .nx-theme-styles .nx-theme-input-1.error {
+    border-color: var(--danger-color);
+    background-color: #FEF2F2;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-error-message {
+    color: #B91C1C;
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+/* === Bouton principal === */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1 {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 12px;
+    padding: 16px !important;
+    line-height: 1.2 !important;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover {
+    background: linear-gradient(to right, #4338CA, #6D28D9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+    cursor: pointer;
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1:hover:before {
+    left: 100%;
+}
+
+/* === Bouton secondaire === */
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 16px !important;
+    line-height: 1.2 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+[dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2:hover {
+    background-color: rgba(79, 70, 229, 0.1);
+    border-color: #4338CA;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* === Multi-page container === */
+ntx-multi-page .nx-multi-page {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    [dir] .nx-theme-styles .nx-theme-form {
+        padding: 20px;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-1,
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-button-2 {
+        font-size: 1rem;
+        padding: 12px !important;
+    }
+
+    [dir] .nx-theme-styles .nx-theme-form .nx-theme-input-1 {
+        font-size: 0.95rem;
+        padding: 12px 14px;
+    }
+}
+
+/* === (Optionnel) Dark Mode prêt à l'emploi === */
+[data-theme='dark'] .nx-theme-form {
+    background-color: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #f3f4f6;
+}
+
+[data-theme='dark'] .nx-theme-input-1 {
+    background-color: rgba(45, 45, 45, 0.9);
+    color: #f3f4f6;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme='dark'] .nx-theme-input-1::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
